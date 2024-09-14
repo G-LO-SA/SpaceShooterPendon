@@ -11,6 +11,8 @@ public abstract class Projectile : MonoBehaviour, IPhysicsMovable, IDamager
     [SerializeField] float _damageAmount;
     public float DamageAmount => _damageAmount;
 
+    [SerializeField] private ParticleSystem Bulleteffects;
+
     public virtual void Move(Vector2 upDirection)
     {
         transform.up = upDirection;
@@ -21,6 +23,7 @@ public abstract class Projectile : MonoBehaviour, IPhysicsMovable, IDamager
     {
         if (other.rigidbody.TryGetComponent<IDamageable>(out var damageable))
         {
+            Instantiate(Bulleteffects, transform.position, Quaternion.identity);
             damageable.TakeDamage(_damageAmount);
             Destroy(gameObject);
         }

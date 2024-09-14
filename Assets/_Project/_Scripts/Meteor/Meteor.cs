@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.ParticleSystemJobs;
 
 public class Meteor : Projectile, IDamageable
 {
+
+    public ParticleSystem Splashdeath;
     #region Health
     [Header("Health")]
     [SerializeField] private float _maxHealth = 5f;
@@ -39,16 +43,20 @@ public class Meteor : Projectile, IDamageable
         CurrentHealth -= damageAmount;
         if (IsDestroyed)
         {
+            Instantiate(Splashdeath,transform.position,Quaternion.identity);
             Destroy(gameObject);
         }
     }
     #endregion
+  
+  
 
     public override void Move(Vector2 upDirection)
     {
         Rigidbody2D.AddForce(upDirection * MovementSpeed);
     }
-
+   
+    
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
@@ -58,7 +66,8 @@ public class Meteor : Projectile, IDamageable
         if (CurrentHealth < MaxHealth && other.CompareTag("Bounds"))
         {
             Destroy(gameObject);
-        }
+     
+        } 
     }
 
     [Header("Appearance")]

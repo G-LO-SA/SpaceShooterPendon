@@ -76,6 +76,7 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 5424564017332903326}
   _movementSpeed: 10
   _damageAmount: 1
+  Bulleteffects: {fileID: 8098252136964608765, guid: fdef15ca19424f048aae969502b9d43d, type: 3}
 --- !u!1 &7580683778249797682
 GameObject:
   m_ObjectHideFlags: 0
