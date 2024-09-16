@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 4724480241748807688}
   - component: {fileID: 7584234931717032584}
   - component: {fileID: 7258067087482505547}
+  - component: {fileID: 1391068939854059979}
   m_Layer: 0
   m_Name: Meteor
   m_TagString: Untagged
@@ -196,8 +197,9 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 7584234931717032584}
   _movementSpeed: 100
   _damageAmount: 10
-  _maxHealth: 10
+  Bulleteffects: {fileID: 8098252136964608765, guid: 1784a9d82cf10824995ab9fa49163446, type: 3}
   Splashdeath: {fileID: 8098252136964608765, guid: 1784a9d82cf10824995ab9fa49163446, type: 3}
+  _maxHealth: 10
   _spriteRenderer: {fileID: 3384117598952805849}
   _sprites:
   - {fileID: 21300000, guid: e4e9f56d1cc97e044bd99c43d5a28760, type: 3}
@@ -208,3 +210,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 69e3ee0c246a1a140bfd22e44ddb22cc, type: 3}
   - {fileID: 21300000, guid: 8b9e2f9d1c76bf94d9436744420558ef, type: 3}
   - {fileID: 21300000, guid: 2adcf5c135766934cadf01a752974473, type: 3}
+--- !u!114 &1391068939854059979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3223179498951190371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e165c7ab96466834d916c73f45bcd491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2D: {fileID: 7584234931717032584}
+  _movementSpeed: 0
+  _damageAmount: 0
+  Bulleteffects: {fileID: 8098252136964608765, guid: 1784a9d82cf10824995ab9fa49163446, type: 3}

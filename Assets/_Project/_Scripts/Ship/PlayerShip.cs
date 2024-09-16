@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerShip : Ship, IShooter
@@ -8,12 +9,20 @@ public class PlayerShip : Ship, IShooter
     [SerializeField] private Transform[] _spawnPoints;
     public Transform[] SpawnPoints => _spawnPoints;
 
+  
+
     public void Shoot(Vector2 upDirection)
     {
         foreach (var spawnPoint in _spawnPoints)
         {
-            var bullet = Instantiate(_bullet, spawnPoint.position, Quaternion.identity);
+            var bullet = Instantiate(_bullet, spawnPoint.position, Quaternion.identity); 
+
             bullet.Move(upDirection);
         }
+    }
+
+    public void activatepowerup()
+    {
+        Debug.Log("power up activated");
     }
 }

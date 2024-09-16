@@ -2,30 +2,32 @@ using UnityEngine;
 
 public class MeteorSpawner : MonoBehaviour, IRandomIntervalSpawner
 {
-    [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] public Transform[] _spawnPoints;
     public Transform[] SpawnPoints => _spawnPoints;
 
-    [SerializeField] private float _minSpawnInterval = 3f, _maxSpawnInterval = 5f;
-    private float _spawnInterval;
+    [SerializeField] public float _minSpawnInterval = 3f, _maxSpawnInterval = 5f;
+    public float _spawnInterval;
     public float Interval => _spawnInterval;
     public float MinimumInterval => _minSpawnInterval;
     public float MaximumInterval => _maxSpawnInterval;
 
-    [SerializeField] private GameObject _meteorPrefab;
+
+
+    [SerializeField] public GameObject _meteorPrefab;
     public GameObject SpawnObjectPrefab => _meteorPrefab;
 
 
-    [SerializeField] private float _spawnRadius;
-    [SerializeField] private Transform _planetTransform;
+    [SerializeField] public float _spawnRadius;
+    [SerializeField] public Transform _planetTransform;
 
-    private float _elapsedTime;
+    public float _elapsedTime;
 
-    private void Start()
+    public void Start()
     {
         _spawnInterval = Random.Range(_minSpawnInterval, _maxSpawnInterval);
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if (_elapsedTime < _spawnInterval)
         {

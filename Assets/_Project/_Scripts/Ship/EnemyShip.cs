@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class EnemyShip : Ship, IShooter
 {
@@ -32,18 +33,18 @@ public class EnemyShip : Ship, IShooter
     private float _distanceThreshold;
 
     private Transform _planetTransform;
-    private Vector2 _directionToPlanet;
+    public Vector2 _directionToPlanet;
 
-    private bool _isWithinShootingRange;
+    public bool _isWithinShootingRange;
 
-    public void Init(Transform planetTransform)
+    public virtual void Init(Transform planetTransform)
     {
         _planetTransform = planetTransform;
 
         _distanceThreshold = Random.Range(_minDistanceThreshold, _maxDistanceThreshold);
     }
 
-    private void Update()
+    public virtual void Update()
     {
         _directionToPlanet = _planetTransform.position - transform.position;
         transform.up = _directionToPlanet;
@@ -62,7 +63,7 @@ public class EnemyShip : Ship, IShooter
             }
         }
     }
-    private void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         if (!_isWithinShootingRange)
         {

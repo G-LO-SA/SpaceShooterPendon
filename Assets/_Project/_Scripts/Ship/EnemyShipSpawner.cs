@@ -5,7 +5,7 @@ public class EnemyShipSpawner : MonoBehaviour, IIntervalSpawner
     [SerializeField] private Transform[] _spawnPoints;
     public Transform[] SpawnPoints => _spawnPoints;
 
-    [SerializeField] private float _spawnRadius;
+    [SerializeField] public float _spawnRadius;
 
     [SerializeField] private float _interval;
     public float Interval => _interval;
@@ -30,7 +30,7 @@ public class EnemyShipSpawner : MonoBehaviour, IIntervalSpawner
         }
     }
 
-    private void SpawnShips(Transform planetTransform)
+    public virtual void SpawnShips(Transform planetTransform)
     {
         var ship = Instantiate(SpawnObjectPrefab, (Vector2)SpawnPoints[Random.Range(0, SpawnPoints.Length)].position + Random.insideUnitCircle * _spawnRadius, Quaternion.identity).GetComponent<EnemyShip>();
         ship.Init(planetTransform);

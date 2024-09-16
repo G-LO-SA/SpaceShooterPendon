@@ -30,7 +30,39 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1559769495578293540}
+  - {fileID: 6503604897033853805}
   m_Father: {fileID: 2511292360728652231}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3333399540336778084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6503604897033853805}
+  m_Layer: 0
+  m_Name: Spawn Point (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6503604897033853805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3333399540336778084}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: 0.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 786536692664039694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4236222624404916401
 GameObject:
@@ -57,7 +89,7 @@ Transform:
   m_GameObject: {fileID: 4236222624404916401}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalPosition: {x: -0.3, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -137,7 +169,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3b8bb2bbcf2973346a780c55d5056b4d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ce688486f888cc4883948b8de66a062, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -184,7 +216,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.93, y: 0.84}
+    oldSize: {x: 1.04, y: 0.84}
     newSize: {x: 0.99, y: 0.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -203,9 +235,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2511292360728652231}
   - component: {fileID: 6029768398787008856}
-  - component: {fileID: 3611768797668749056}
+  - component: {fileID: 5203747841642542104}
   m_Layer: 0
-  m_Name: Enemy Ship
+  m_Name: Enemy new Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,7 +287,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3611768797668749056
+--- !u!114 &5203747841642542104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,15 +296,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 9042617024688429244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5655e4c44001ec4095588a2ad611015, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c80c4c847eadc54484d9e3763f91317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 5
-  _movementSpeed: 2
+  _maxHealth: 20
+  _movementSpeed: 10
   _rigidbody2D: {fileID: 6029768398787008856}
   _spawnPoints:
+  - {fileID: 6503604897033853805}
   - {fileID: 1559769495578293540}
-  _bullet: {fileID: -2088921902015459815, guid: 6b997a2fa0361f0459a4ee5749f0e9d6, type: 3}
+  _bullet: {fileID: 1080002490549285575, guid: 90c2e83df603b1441b49c697335c2672, type: 3}
   _interval: 1
   _minDistanceThreshold: 7
   _maxDistanceThreshold: 9

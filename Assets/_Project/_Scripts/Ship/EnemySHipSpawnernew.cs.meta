@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 21bc8b0c8c215f44b8d9d5779847accf
+guid: e659632621049154ca04361b4f67289a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - _rigidbody2D: {instanceID: 0}
-  - Bulleteffects: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
